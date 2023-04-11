@@ -1,3 +1,11 @@
+# Fork notes:
+
+1. Needed to update `package.json` to include `"main": "dist/react-tooltip.cjs",' so that it can be consumed by `shadow-cljs`. `shadow-cljs` does not yet support `"exports"`.
+2. Needed to remove some devDependencies so that it could be installed with node v16.1.0.
+3. Needed to remove `"prepare": "husky install",` so that it could be installed with node v16.1.0.
+3. Published using `gitpkg publish`
+
+
 # react-tooltip
 
 [![Version](http://img.shields.io/npm/v/react-tooltip.svg)](https://www.npmjs.org/package/react-tooltip)
