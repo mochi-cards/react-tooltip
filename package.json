@@ -1,13 +1,13 @@
 {
   "name": "react-tooltip",
-  "version": "5.10.5",
+  "version": "5.11.1",
   "description": "react tooltip component",
   "main": "dist/react-tooltip.cjs",
   "scripts": {
     "dev-rollup": "node ./prebuild.js --env=development && node --max_old_space_size=2048 ./node_modules/rollup/dist/bin/rollup -c rollup.config.dev.js --watch",
-    "build-rollup": "node ./prebuild.js --env=production && npm run types && node --max_old_space_size=2048 ./node_modules/rollup/dist/bin/rollup -c rollup.config.prod.js",
+    "build": "node ./prebuild.js --env=production && npm run types && node --max_old_space_size=2048 ./node_modules/rollup/dist/bin/rollup -c rollup.config.prod.js",
     "dev": "node ./prebuild.js --env=development && node ./esbuild.config.dev.mjs",
-    "build": "node ./prebuild.js --env=production && node ./esbuild.config.prod.mjs",
+    "build-esbuild": "node ./prebuild.js --env=production && node ./esbuild.config.prod.mjs",
     "types": "node --max_old_space_size=2048 ./node_modules/rollup/dist/bin/rollup -c rollup.config.types.js",
     "eslint": "eslint --ext=js --ext=jsx --ext=ts --ext=tsx --fix ./src",
     "stylelint": "stylelint \"src/**/*.css\"",
@@ -17,7 +17,7 @@
     "esbuild": "esbuild",
     "test": "jest",
     "postbuild": "npm run types && npm run bundlesize",
-    "prepublishOnly": "npm run build-rollup"
+    "prepublishOnly": "npm run build"
   },
   "types": "dist/react-tooltip.d.ts",
   "license": "MIT",
@@ -33,6 +33,8 @@
   "bugs": {
     "url": "https://github.com/ReactTooltip/react-tooltip/issues"
   },
+  "main": "dist/react-tooltip.min.cjs",
+  "module": "dist/react-tooltip.min.mjs",
   "exports": {
     ".": {
       "types": "./dist/react-tooltip.d.ts",
@@ -40,6 +42,7 @@
       "import": "./dist/react-tooltip.min.mjs",
       "default": "./dist/react-tooltip.min.cjs"
     },
+    "./dist/react-tooltip": "./dist/react-tooltip.min.cjs",
     "./dist/react-tooltip.css": "./dist/react-tooltip.min.css",
     "./dist/react-tooltip.d.ts": "./dist/react-tooltip.d.ts",
     "./package.json": "./package.json"

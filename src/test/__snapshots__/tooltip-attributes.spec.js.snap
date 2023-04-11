@@ -11,10 +11,12 @@ exports[`tooltip attributes basic tooltip 1`] = `
   <div
     class="react-tooltip react-tooltip__place-top"
     role="tooltip"
+    style="left: 5px; top: -10px;"
   >
     Hello World!
     <div
       class="react-tooltip-arrow"
+      style="left: 5px; bottom: -4px;"
     />
   </div>
 </div>
@@ -32,10 +34,12 @@ exports[`tooltip attributes tooltip with place 1`] = `
   <div
     class="react-tooltip react-tooltip__place-right"
     role="tooltip"
+    style="left: 10px; top: 5px;"
   >
     Hello World!
     <div
       class="react-tooltip-arrow"
+      style="left: -4px; top: 5px;"
     />
   </div>
 </div>
